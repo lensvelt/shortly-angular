@@ -23,8 +23,8 @@ angular.module('shortly', [
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })
-    .otherwise('/signin', {
-      templateUrl: 'app/auth/signin.html',
+    .otherwise('/links', {
+      templateUrl: 'app/auth/links.html',
       controller: 'AuthController'
     });
 
