@@ -1,6 +1,6 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
-  <form name='shortenForm' ng-submit='shorten()' novalidate>
+  <form name='shortenForm' ng-submit='addLink()' novalidate>
     <input ng-model='url' class='text' type='url' name='url' required placeholder='http(s)://'>
     <span ng-show='shortenForm.$submitted && shortenForm.url.$error.required'>URL is required!</span> 
     <span ng-show='shortenForm.$submitted && shortenForm.url.$error.url'>Not a valid URL!</span> 
