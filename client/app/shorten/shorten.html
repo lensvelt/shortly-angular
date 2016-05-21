@@ -1,9 +1,9 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
   <form name='shortenForm' ng-submit='shorten()' novalidate>
-    <input ng-model='url' class='text' type='text' name='url' required >
+    <input ng-model='url' class='text' type='url' name='url' required placeholder='http(s)://'>
     <span ng-show='shortenForm.$submitted && shortenForm.url.$error.required'>URL is required!</span> 
-    <span ng-show='shortenForm.url.$error.url'>Not a valid URL!</span> 
+    <span ng-show='shortenForm.$submitted && shortenForm.url.$error.url'>Not a valid URL!</span> 
     <button>Shorten</button>
   </form>
   <img ng-show='' class='spinner' src='/assets/spiffygif_46x46.gif'>

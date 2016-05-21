@@ -8,7 +8,6 @@ angular.module('shortly.services', [])
       url: '/api/links/',
     })
     .then(function(resp) {
-      console.log('response GET', resp);
       return (resp.data);
     })
     .catch(function(err) {
@@ -26,12 +25,10 @@ angular.module('shortly.services', [])
       data: JSON.stringify(link)
     })
     .then(function(resp) {
-      console.log('response POST', resp);
-      return resp.data;
+      return resp;
     })
     .catch(function(err) {
       console.error(err);
-      return err;
     });
   };
 

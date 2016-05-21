@@ -6,13 +6,10 @@ angular.module('shortly.shorten', [])
     Links.addOne({ url: $scope.url })
     .then(function(resp) {
       if (resp.status === 200) {
-        console.log('inside');
-        $scope.shortenForm.url.$error.url = false;
         $location.path('/links');
-      } else {
-        $scope.shortenForm.url.$error.url = true;
       }
     });
   };
 
 });
+  

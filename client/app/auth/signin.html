@@ -1,8 +1,10 @@
 <div id='signin' ng-controller='AuthController'>
   <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
+  <form name="signinForm" ng-submit='signin()' novalidate>
+    <input type='text' ng-model='user.username' required>
+    <span ng-show='signinForm.$submitted && !user.username'>Username is required!</span> 
+    <input type="password" ng-model='user.password' required>
+    <span ng-show='signinForm.$submitted && !user.password'>Password is required</span> 
     <button>signin</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
