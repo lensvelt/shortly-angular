@@ -20,7 +20,10 @@ angular.module('shortly.services', [])
     return $http({
       method: 'POST',
       url: '/api/links/',
-      data: link
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: JSON.stringify(link)
     })
     .then(function(resp) {
       console.log('response POST', resp);
@@ -28,6 +31,7 @@ angular.module('shortly.services', [])
     })
     .catch(function(err) {
       console.error(err);
+      return err;
     });
   };
 

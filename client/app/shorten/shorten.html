@@ -1,6 +1,23 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
-<li>Hello!</li>
+  <form name='shortenForm' ng-submit='shorten()' novalidate>
+    <input ng-model='url' class='text' type='text' name='url' required >
+    <span ng-show='shortenForm.$submitted && shortenForm.url.$error.required'>URL is required!</span> 
+    <span ng-show='shortenForm.url.$error.url'>Not a valid URL!</span> 
+    <button>Shorten</button>
+  </form>
+  <img ng-show='' class='spinner' src='/assets/spiffygif_46x46.gif'>
 </div>
 
-
+<!-- <input
+  ng-model="string"
+  [name="string"]
+  [required="string"]
+  [ng-required="boolean"]
+  [ng-minlength="number"]
+  [ng-maxlength="number"]
+  [ng-pattern="string"]
+  [ng-change="string"]
+  [ng-trim="boolean"]>
+...
+</input> -->
